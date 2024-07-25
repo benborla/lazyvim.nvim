@@ -109,3 +109,8 @@ keymap.set(
 )
 keymap.set("i", "<C-[>", "copilot#Previous()", { noremap = true, silent = true, expr = true, replace_keycodes = false })
 keymap.set("i", "<C-]>", "copilot#Next()", { noremap = true, silent = true, expr = true, replace_keycodes = false })
+
+keymap.set("n", "\\\\", "<cmd>lua require('telescope.builtin').buffers()<CR>", { noremap = true, silent = true })
+
+-- show floating diagnostic
+keymap.set("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>", { noremap = true, silent = true })
