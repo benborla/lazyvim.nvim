@@ -11,6 +11,6 @@ vim.cmd("highlight ColorColumn ctermbg=red guibg=#af3a03")
 -- vim.cmd('highlight Variable guifg=#ECBE7B')
 vim.cmd("highlight Visual guifg=black guibg=#d79921")
 -- SET BACKGROUND TO TRANSPARENT
-vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")
-vim.cmd("highlight EndOfBuffer guibg=NONE ctermbg=NONE")
+-- vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")
+-- vim.cmd("highlight EndOfBuffer guibg=NONE ctermbg=NONE")
 -- end, 150)

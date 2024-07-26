@@ -1,13 +1,12 @@
 return {
-  "ellisonleao/gruvbox.nvim",
+  "rebelot/kanagawa.nvim",
   opts = {
-    colorscheme = "gruvbox",
+    colorscheme = "kanagawa",
   },
-  -- Set the colorscheme
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox",
+      colorscheme = "kanagawa-wave",
     },
   },
 }
