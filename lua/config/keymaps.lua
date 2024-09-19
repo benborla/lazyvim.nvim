@@ -87,9 +87,9 @@ keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { silent = true })
 
 -- DELETE WITHOUT REPLACING THE CLIPBOARD (OR REGISTERING IN XCLIP)
 -- black hole register strategy
-keymap.set("n", "d", '"_d')
-keymap.set("n", "c", '"_c')
-keymap.set("n", "x", '"_x')
+-- keymap.set("n", "d", '"_d')
+-- keymap.set("n", "c", '"_c')
+-- keymap.set("n", "x", '"_x')
 -- this will ensure that whenever your delete a text or a character it won't replaced
 -- whatever you have in your clipboard.
 
