@@ -56,7 +56,7 @@ require("lazy").setup({
 
 require("neo-tree").setup({
   window = {
-    position = "right",
+    position = "float",
     width = 40,
   },
 })
