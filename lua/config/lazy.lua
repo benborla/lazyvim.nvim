@@ -57,6 +57,12 @@ require("lazy").setup({
 require("neo-tree").setup({
   window = {
     position = "right",
-    width = 60,
+    width = 40,
+  },
+})
+
+vim.filetype.add({
+  pattern = {
+    [".*%.blade%.php"] = "php",
   },
 })
