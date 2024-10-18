@@ -24,7 +24,8 @@ keymap.set("v", "ww", "<ESC>:w!<CR>", { silent = true })
 -- press ww to save changes when in insert mode
 keymap.set("i", "ww", "<ESC>:w!<CR>", { silent = true })
 -- press qq to close file
-keymap.set("n", "bn | bd #", "<ESC>:q!<CR>", { silent = true })
+keymap.set("n", "qq", "<ESC>:q!<CR>", { silent = true })
+keymap.set("n", "qw", "<ESC>:bn | bd #<CR>", { silent = true })
 keymap.set("n", "qe", "<ESC>:bw!<CR>", { silent = true })
 keymap.set("n", "Q", "<ESC>:qa!<CR>", { silent = true })
 -- press ii to go back to normal mode
