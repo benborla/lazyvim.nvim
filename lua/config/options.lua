@@ -15,3 +15,9 @@ vim.opt.cursorline = true
 vim.opt.termguicolors = true
 vim.opt.winblend = 0
 vim.opt.wildoptions = "pum"
+
+vim.opt.laststatus = 0
+
+vim.api.nvim_create_user_command("PrettierConfig", function()
+  vim.print(vim.fn.system("prettier --find-config-path " .. vim.fn.expand("%:p")))
+end, {})

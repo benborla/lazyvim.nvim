@@ -18,6 +18,13 @@ return {
         blade = { "blade-formatter", "rustywind" },
         python = { "black" },
         javascript = { "prettierd" },
+        typescript = { "prettierd" },
+        javascriptreact = { "prettierd" },
+        typescriptreact = { "prettierd" },
+        css = { "prettierd" },
+        scss = { "prettierd" },
+        html = { "prettierd" },
+        yaml = { "prettierd" },
         -- rust = { "rustfmt" },
       },
       -- LazyVim will merge the options you set here with builtin formatters.

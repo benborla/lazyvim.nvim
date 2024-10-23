@@ -46,13 +46,13 @@ return {
           theme = "auto",
           globalstatus = vim.o.laststatus == 3,
           disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter" } },
+          position = "top",
         },
         sections = {
           lualine_a = { "mode" },
           lualine_b = { "branch" },
 
           lualine_c = {
-            LazyVim.lualine.root_dir(),
             {
               "diagnostics",
               symbols = {
@@ -62,8 +62,6 @@ return {
                 hint = icons.diagnostics.Hint,
               },
             },
-            { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
-            { LazyVim.lualine.pretty_path() },
           },
           lualine_x = {
             -- stylua: ignore
@@ -110,6 +108,28 @@ return {
             },
           },
           lualine_y = {
+            LazyVim.lualine.root_dir(),
+            { LazyVim.lualine.pretty_path() },
+            { "filetype", icon_only = false, separator = "", padding = { left = 1, right = 1 } },
+            {
+              function()
+                local msg = "No LSP"
+                local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
+                local clients = vim.lsp.get_active_clients()
+                if next(clients) == nil then
+                  return msg
+                end
+                for _, client in ipairs(clients) do
+                  local filetypes = client.config.filetypes
+                  if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+                    return client.name
+                  end
+                end
+                return msg
+              end,
+              icon = "",
+              color = { fg = "#ffffff", gui = "bold" },
+            },
             { "progress", separator = " ", padding = { left = 1, right = 0 } },
             { "location", padding = { left = 0, right = 1 } },
           },
