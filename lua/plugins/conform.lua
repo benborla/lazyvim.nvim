@@ -24,7 +24,8 @@ return {
         css = { "prettierd" },
         scss = { "prettierd" },
         html = { "prettierd" },
-        yaml = { "prettierd" },
+        yaml = { "helm_ls", "helm-ls" },
+        yml = { "helm_ls", "helm-ls" },
         -- rust = { "rustfmt" },
       },
       -- LazyVim will merge the options you set here with builtin formatters.

@@ -59,6 +59,12 @@ require("neo-tree").setup({
     position = "float",
     width = 40,
   },
+  event_handlers = {
+    event = "neo_tree_buffer_enter",
+    handler = function()
+      vim.opt_local.relativenumber = true
+    end,
+  },
 })
 
 vim.filetype.add({
