@@ -2,13 +2,13 @@ local util = require("conform.util")
 return {
   "stevearc/conform.nvim",
   opts = function()
-    ---@type conform.setupOpts
+    ---@type conform.setupopts
     local opts = {
       default_format_opts = {
         timeout_ms = 3000,
-        async = false, -- not recommended to change
-        quiet = false, -- not recommended to change
-        lsp_format = "fallback", -- not recommended to change
+        async = false,
+        quiet = false,
+        lsp_format = "fallback",
       },
       formatters_by_ft = {
         lua = { "stylua" },
@@ -24,26 +24,11 @@ return {
         css = { "prettierd" },
         scss = { "prettierd" },
         html = { "prettierd" },
-        yaml = { "helm_ls", "helm-ls" },
-        yml = { "helm_ls", "helm-ls" },
-        -- rust = { "rustfmt" },
+        yaml = { "helm_ls", "prettier" },
+        yml = { "helm_ls", "prettier" },
       },
-      -- LazyVim will merge the options you set here with builtin formatters.
-      -- You can also define any custom formatters here.
-      ---@type table<string, conform.FormatterConfigOverride|fun(bufnr: integer): nil|conform.FormatterConfigOverride>
       formatters = {
         injected = { options = { ignore_errors = true } },
-        -- # Example of using dprint only when a dprint.json file is present
-        -- dprint = {
-        --   condition = function(ctx)
-        --     return vim.fs.find({ "dprint.json" }, { path = ctx.filename, upward = true })[1]
-        --   end,
-        -- },
-        --
-        -- # Example of using shfmt with extra args
-        -- shfmt = {
-        --   extra_args = { "-i", "2", "-ci" },
-        -- },
         pint = {
           meta = {
             url = "https://github.com/laravel/pint",
@@ -54,6 +39,11 @@ return {
             "vendor/bin/pint",
           }, "pint"),
           args = { "$FILENAME" },
+          stdin = false,
+        },
+        helm_ls = {
+          command = vim.fn.expand("~/go/bin/helm-ls"),
+          args = { "format" },
           stdin = false,
         },
       },

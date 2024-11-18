@@ -60,10 +60,12 @@ require("neo-tree").setup({
     width = 40,
   },
   event_handlers = {
-    event = "neo_tree_buffer_enter",
-    handler = function()
-      vim.opt_local.relativenumber = true
-    end,
+    { -- Note the extra {} wrapping
+      event = "neo_tree_buffer_enter",
+      handler = function()
+        vim.opt_local.relativenumber = true
+      end,
+    },
   },
 })
 
