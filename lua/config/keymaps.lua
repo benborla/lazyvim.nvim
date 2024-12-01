@@ -115,3 +115,6 @@ keymap.set("n", "\\\\", "<cmd>lua require('telescope.builtin').buffers()<CR>", {
 
 -- show floating diagnostic
 keymap.set("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>", { noremap = true, silent = true })
+
+-- open Neo-tree on current working directory
+vim.keymap.set("n", ";f", ":Neotree dir=%:p:h<CR>", { silent = true })
