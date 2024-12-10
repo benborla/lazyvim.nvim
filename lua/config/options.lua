@@ -21,3 +21,5 @@ vim.opt.laststatus = 0
 vim.api.nvim_create_user_command("PrettierConfig", function()
   vim.print(vim.fn.system("prettier --find-config-path " .. vim.fn.expand("%:p")))
 end, {})
+
+vim.opt.ls = 2

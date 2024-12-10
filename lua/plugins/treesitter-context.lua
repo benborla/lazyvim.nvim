@@ -4,5 +4,7 @@ end
 return {
   "nvim-treesitter/nvim-treesitter-context",
   event = "BufEnter",
-  opts = {}, -- your configuration
+  opts = {
+    enable = false,
+  },
 }
