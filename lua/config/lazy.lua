@@ -74,3 +74,5 @@ vim.filetype.add({
     [".*%.blade%.php"] = "php",
   },
 })
+
+require("user.lightbulb")

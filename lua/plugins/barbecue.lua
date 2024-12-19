@@ -1,3 +1,7 @@
+if true then
+  return {}
+end
+
 return {
   "utilyre/barbecue.nvim",
   name = "barbecue",
