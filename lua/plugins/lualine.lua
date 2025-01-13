@@ -34,6 +34,17 @@ return {
       end,
     }
 
+    local is_macro_recording = {
+      function()
+        local reg = vim.fn.reg_recording()
+        if reg == "" then
+          return ""
+        end
+
+        return "[MACRO] Recording @" .. reg
+      end,
+    }
+
     local diagnostics = {
       "diagnostics",
       sources = { "nvim_diagnostic" },
@@ -100,6 +111,7 @@ return {
         },
         lualine_y = {
           lsp_server,
+          is_macro_recording,
           { "progress", separator = " ", padding = { left = 1, right = 0 } },
           { "location", padding = { left = 0, right = 1 } },
         },
