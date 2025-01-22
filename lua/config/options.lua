@@ -23,3 +23,6 @@ vim.api.nvim_create_user_command("PrettierConfig", function()
 end, {})
 
 vim.opt.ls = 2
+
+vim.g.paste_mode = 0
+vim.opt.paste = false

@@ -93,11 +93,12 @@ return {
     local opts = {
       options = {
         theme = "gruvbox",
+        -- theme = require("user.lualine").theme(),
         globalstatus = true,
-        -- component_separators = { left = "", right = "" },
-        -- section_separators = { left = "", right = "" },
-        section_separators = { left = "", right = "" },
-        component_separators = { left = "", right = "" },
+        component_separators = { left = "", right = "" },
+        section_separators = { left = "", right = "" },
+        -- section_separators = { left = "", right = "" },
+        -- component_separators = { left = "", right = "" },
         disabled_filetypes = { statusline = { "dashboard", "alpha", "lazy", "ministarter", "snacks_dashboard" } },
       },
       sections = {
@@ -117,7 +118,7 @@ return {
         },
         lualine_z = {
           function()
-            return " " .. os.date("%R")
+            return "  " .. os.date("%R")
           end,
         },
       },
